@@ -1,24 +1,30 @@
 {
   "name": "liberusoftware/module-liberu-executive-insights",
-  "version": "1.3.1",
+  "description": "Governed Liberu cross-product metrics, lineage, and decision snapshots.",
   "type": "liberu-module",
-  "description": "Liberu liberu-executive-insights module.",
   "license": "MIT",
   "require": {
     "php": "^8.5",
     "illuminate/database": "^13.38.0",
-    "illuminate/support": "^13.38.0"
+    "illuminate/support": "^13.38.0",
+    "liberusoftware/module-manager": "^1.0"
   },
   "autoload": {
     "psr-4": {
-      "Liberu\\Platform\\ExecutiveInsights\\": "src/"
+      "Liberu\\ExecutiveInsights\\": "src/"
     }
   },
-  "autoload-dev": {
-    "psr-4": {
-      "Liberu\\Platform\\ExecutiveInsights\\Tests\\": "tests/"
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Liberu\\ExecutiveInsights\\ExecutiveInsightsServiceProvider"
+      ]
+    },
+    "liberu": {
+      "name": "liberu-executive-insights"
     }
   },
+  "version": "1.4.0",
   "require-dev": {
     "liberusoftware/package-testbench": "^1.5",
     "pestphp/pest": "^5.3.3"
@@ -29,12 +35,6 @@
   "config": {
     "allow-plugins": {
       "pestphp/pest-plugin": true
-    }
-  },
-  "extra": {
-    "liberu": {
-      "name": "liberu-executive-insights",
-      "provider": "Liberu\\Platform\\ExecutiveInsights\\ExecutiveInsightsServiceProvider"
     }
   }
 }

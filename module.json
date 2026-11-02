@@ -1,22 +1,27 @@
 {
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
   "name": "liberu-executive-insights",
   "display_name": "Liberu Executive Insights",
-  "description": "Provider-neutral Liberu Executive Insights capability.",
-  "version": "1.3.1",
+  "description": "Governed cross-product metrics and decision evidence.",
+  "version": "1.4.0",
   "category": "capability",
-  "provider": "Liberu\\Platform\\ExecutiveInsights\\ExecutiveInsightsServiceProvider",
+  "provider": "Liberu\\ExecutiveInsights\\ExecutiveInsightsServiceProvider",
   "requires": {
     "php": "^8.5",
     "laravel": "^13.0",
-    "packages": {}
+    "packages": {
+      "liberusoftware/module-manager": "^1.0"
+    }
   },
   "capabilities": [
-    "liberu.executive-insights",
-    "liberu.executive-insights.lifecycle"
+    "liberu.executive.insights"
   ],
+  "default_enabled": true,
   "features": [
-    "liberu executive insights",
-    "liberu executive insights lifecycle"
-  ],
-  "default_enabled": true
+    "Metric registry",
+    "Cross-product projections",
+    "Evidence drill-through",
+    "Decision snapshots",
+    "Data-quality operations"
+  ]
 }
